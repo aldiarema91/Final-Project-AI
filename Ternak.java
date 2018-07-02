@@ -139,6 +139,9 @@ public class Ternak extends javax.swing.JFrame {
             sql6 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and waktu='"+waktu+"'";
             sql7 = "SELECT id_ternak from `table 1` where hasil='cocok' and pemeliharaan='"+pelihara+"'";
             sql8 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and pemeliharaan='"+pelihara+"'";
+            sql9 = "SELECT id_ternak from `table 1` where hasil='cocok' and kat_biaya='"+kate+"'";
+            sql0 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and kat_biaya='"+kate+"'";
+            
             ResultSet rs = stmt.executeQuery(sql);
             stmt = (Statement) conn.createStatement();
             ResultSet rs2 = stmt.executeQuery(sql2);
@@ -198,7 +201,7 @@ public class Ternak extends javax.swing.JFrame {
             stmt.close();
             conn.close();
             System.out.println("cocok = "+cocok+ "\n" +"Tidak cocok = "+tcocok+ "\n" +
-                                " Daya cocok = "+dayaC+ "\n" +" dayaT cocok = "+dayaT+ "\n" +"waktuC cocok = "+waktuC+"\n"+"waktuT cocok = "+waktuT+"\n"+" pelihara cocok = "+peliharaC+"\n"+"peliharaT cocok = "+peliharaT+"\n"+"biaya cocok = "+biayaC+"\n"+"biayaT cocok = "+biayaT+"\n");
+                                " Daya cocok = "+dayaC+ "\n" +" dayaT cocok = "+waktuC+ "\n" +"waktuC cocok = "+peliharaC+"\n"+"waktuT cocok = "+biayaC+"\n"+" pelihara cocok = "+peliharaC+"\n"+"peliharaT cocok = "+peliharaT+"\n"+"biaya cocok = "+biayaC+"\n"+"biayaT cocok = "+biayaT+"\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
