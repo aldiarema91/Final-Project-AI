@@ -165,7 +165,9 @@ public class Ternak extends javax.swing.JFrame {
             while (rs.next()) {                
                 cocok++;
             }
-            
+            while (rs2.next()) {                
+                tcocok++;
+            }
             
             while (rs4.next()) {  
                 dayaT++;
