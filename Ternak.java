@@ -201,7 +201,9 @@ public class Ternak extends javax.swing.JFrame {
             stmt.close();
             conn.close();
             System.out.println("cocok = "+cocok+ "\n" +"Tidak cocok = "+tcocok+ "\n" +
-                                " Daya cocok = "+dayaC+ "\n" +" dayaT cocok = "+waktuC+ "\n" +"waktuC cocok = "+peliharaC+"\n"+"waktuT cocok = "+biayaC+"\n"+" pelihara cocok = "+peliharaC+"\n"+"peliharaT cocok = "+peliharaT+"\n"+"biaya cocok = "+biayaC+"\n"+"biayaT cocok = "+biayaT+"\n");
+                                " Daya cocok = "+dayaC+ "\n" +" dayaT cocok = "+dayaT+ "\n" +
+                                        "waktuC cocok = "+waktuC+"\n"+"waktuT cocok = "+waktuT+"\n"+" pelihara cocok = "+peliharaC+"\n"+"peliharaT cocok = "+
+                                peliharaT+"\n"+"biaya cocok = "+biayaC+"\n"+"biayaT cocok = "+biayaT+"\n");
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
