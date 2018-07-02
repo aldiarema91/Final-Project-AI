@@ -139,8 +139,6 @@ public class Ternak extends javax.swing.JFrame {
             sql6 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and waktu='"+waktu+"'";
             sql7 = "SELECT id_ternak from `table 1` where hasil='cocok' and pemeliharaan='"+pelihara+"'";
             sql8 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and pemeliharaan='"+pelihara+"'";
-            sql9 = "SELECT id_ternak from `table 1` where hasil='cocok' and kat_biaya='"+kate+"'";
-            sql0 = "SELECT id_ternak from `table 1` where hasil='tidak cocok' and kat_biaya='"+kate+"'";
             ResultSet rs = stmt.executeQuery(sql);
             stmt = (Statement) conn.createStatement();
             ResultSet rs2 = stmt.executeQuery(sql2);
@@ -168,7 +166,9 @@ public class Ternak extends javax.swing.JFrame {
             while (rs2.next()) {                
                 tcocok++;
             }
-            
+            while (rs3.next()) {                
+                dayaC++;
+            }
             while (rs4.next()) {  
                 dayaT++;
             }
