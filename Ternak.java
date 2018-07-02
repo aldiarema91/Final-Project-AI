@@ -13,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Aldi
+ * @author Aldi, Imam, Rahardian
  */
 public class Ternak extends javax.swing.JFrame {
 
