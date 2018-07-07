@@ -207,6 +207,22 @@ public class Ternak extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        String HC = "COCOK";
+        String HT = "TIDAK COCOK";
+        String HA = null;
+        float HasilSC,HasilST,Hcocok,HTcocok,Hdaya,HTdaya,Hwaktu,HTwaktu,Hpelihara,HTpelihara,Hbiaya,HTbiaya;
+        Hcocok = cocok/no;
+        HTcocok = tcocok/no;
+        System.out.println("COCOK = "+Hcocok);
+        System.out.println("TIDAK COCOK = "+HTcocok);
+        Hdaya = dayaC/cocok;
+        HTdaya = dayaT/tcocok;
+        System.out.println("DAYA TAHAN = "+ daya +"HASIL COCOK = " + Hdaya );
+        System.out.println("DAYA TAHAN = "+ daya +"HASIL TIDAK COCOK= " + HTdaya);
+        Hwaktu = waktuC/cocok;
+        HTwaktu = waktuT/tcocok;
+        System.out.println("WAKTU PERTUMBUHAN = " + waktu +"HASIL COCOK = " + Hwaktu);
+        System.out.println("WAKTU PERTUMBUHAN = " + waktu +"HASIL TIDAK COCOK= " + HTwaktu);
     }
     /**
      * This method is called from within the constructor to initialize the form.
