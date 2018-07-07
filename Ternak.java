@@ -223,6 +223,25 @@ public class Ternak extends javax.swing.JFrame {
         HTwaktu = waktuT/tcocok;
         System.out.println("WAKTU PERTUMBUHAN = " + waktu +"HASIL COCOK = " + Hwaktu);
         System.out.println("WAKTU PERTUMBUHAN = " + waktu +"HASIL TIDAK COCOK= " + HTwaktu);
+         Hpelihara = peliharaC/cocok;
+        HTpelihara = peliharaT/tcocok;
+        System.out.println("PEMELIHARAAN = " + pelihara +"HASIL COCOK = " + Hpelihara);
+        System.out.println("PEMELIHARAAN = " + pelihara +"HASIL TIDAK COCOK = " + HTpelihara);
+        Hbiaya = biayaC/cocok;
+        HTbiaya = biayaT/tcocok;
+        System.out.println("BIAYA = " + biaya +"HASIL COCOK = " + Hbiaya);
+        System.out.println("BIAYA = " + biaya +"HASIL TIDAK COCOK = " + HTbiaya);
+        HasilSC = (Hdaya*Hwaktu*Hpelihara*Hbiaya);
+        System.out.println("HASIL KESELURUHAN (COCOK) = "+HasilSC);
+        HasilST = (HTdaya*HTwaktu*HTpelihara*HTbiaya);
+        System.out.println("HASIL KESELURUHAN (TIDAK COCOK) = "+HasilST);
+        if(HasilSC > HasilST){
+            System.out.println("Kesimpulan = " + HC );
+            HA = HC;
+        }else{
+            System.out.println("kesimpulan = " + HT);
+            HT = HA;
+        }
     }
     /**
      * This method is called from within the constructor to initialize the form.
