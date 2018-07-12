@@ -45,7 +45,7 @@ public class Ternak extends javax.swing.JFrame {
         
     }
     
-    void setData(int id, String jenis, String daya,String waktu,String pelihara,String biaya,String hasil){
+    void setData(int id, String jenis, String daya,String waktu,String pelihara,String biaya, String kate, String hasil){
         try {
 
             conn = konek();
@@ -54,11 +54,11 @@ public class Ternak extends javax.swing.JFrame {
                 System.out.println("koneksi sukses!");
             }  
 
-            createStmt()
+            createStmt();
             String sql = "INSERT INTO `table 1` "
-                    + "(`id_ternak`, `jenis_ternak`, `daya_tahan`, `waktu`, `pemeliharaan`, `biaya`, `hasil`)"
+                    + "(`id_ternak`, `jenis_ternak`, `daya_tahan`, `waktu`, `pemeliharaan`, `biaya`, `kat_biaya`,`hasil`)"
                     + " VALUES "
-                    + "("+id+","+jenis+","+daya+","+waktu+","+pelihara+","+biaya+","+hasil+")";
+                    + "('"+id+"','"+jenis+"','"+daya+"','"+waktu+"','"+pelihara+"','"+biaya+"','"+kate+"','"+hasil+"')";
 
             if(stmt.executeUpdate(sql) > 0){
                 System.out.println("Tambah berhasil");
@@ -226,8 +226,8 @@ public class Ternak extends javax.swing.JFrame {
         System.out.println("PEMELIHARAAN = " + pelihara +"HASIL TIDAK COCOK = " + HTpelihara);
         Hbiaya = biayaC/cocok;
         HTbiaya = biayaT/tcocok;
-        System.out.println("BIAYA = " + biaya +"HASIL COCOK = " + Hbiaya);
-        System.out.println("BIAYA = " + biaya +"HASIL TIDAK COCOK = " + HTbiaya);
+        System.out.println("BIAYA = " + kate +"HASIL COCOK = " + Hbiaya);
+        System.out.println("BIAYA = " + kate +"HASIL TIDAK COCOK = " + HTbiaya);
         HasilSC = (Hdaya*Hwaktu*Hpelihara*Hbiaya);
         System.out.println("HASIL KESELURUHAN (COCOK) = "+HasilSC);
         HasilST = (HTdaya*HTwaktu*HTpelihara*HTbiaya);
@@ -249,11 +249,22 @@ public class Ternak extends javax.swing.JFrame {
         pelihara = (String) cbPelihara.getSelectedItem();
         biaya = txtBiaya.getText();
         hasil = "";
-        
-        //Naive Bayes
-        Hitung(daya, waktu, pelihara, biaya);
-        
-        //setData(no, jenis, daya, waktu, pelihara, biaya, hasil);
+        int a = Integer.parseInt(biaya);
+        String kate;
+        if (a>0) {            
+            if (a <= 5000000) {
+                kate = "Murah";
+            } else if (a<=10000000) {
+                kate = "Sedang";
+            }else{
+                kate = "Mahal";
+            }
+            //Hitung
+            setData(no, jenis, daya, waktu, pelihara, biaya, kate, Hitung(daya, waktu, pelihara, biaya));
+            getData();
+            txtJenis.setText("");
+            txtBiaya.setText("");
+        }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
